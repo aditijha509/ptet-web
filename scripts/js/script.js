@@ -72,50 +72,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.addEventListener("scroll", revealOnScroll);
 
-
-    /* ===== REVIEWS — AUTO SCROLL + ARROW BUTTONS ===== */
-
-    const reviewsContainer = document.getElementById("reviews");
-    const revPrev = document.getElementById("revPrev");
-    const revNext = document.getElementById("revNext");
-
-    if (reviewsContainer) {
-
-        const CARD_SCROLL = 292; // card width (270) + gap (22)
-        let autoTimer = null;
-
-        function startAuto() {
-            stopAuto();
-            autoTimer = setInterval(() => {
-                const maxScroll = reviewsContainer.scrollWidth - reviewsContainer.clientWidth;
-                if (reviewsContainer.scrollLeft >= maxScroll - 1) {
-                    reviewsContainer.scrollLeft = 0;
-                } else {
-                    reviewsContainer.scrollLeft += 1;
-                }
-            }, 18);
-        }
-
-        function stopAuto() {
-            clearInterval(autoTimer);
-        }
-
-        function scrollByCard(dir) {
-            stopAuto();
-            reviewsContainer.scrollBy({ left: dir * CARD_SCROLL, behavior: "smooth" });
-            setTimeout(startAuto, 1200); // restart auto after user click
-        }
-
-        if (revNext) revNext.addEventListener("click", () => scrollByCard(1));
-        if (revPrev) revPrev.addEventListener("click", () => scrollByCard(-1));
-
-        reviewsContainer.addEventListener("mouseenter", stopAuto);
-        reviewsContainer.addEventListener("mouseleave", startAuto);
-
-        startAuto();
-    }
-
-
     /* FAQ ACCORDION (SINGLE OPEN + ANIMATION) */
 
         const faqItems = document.querySelectorAll(".faq-item");

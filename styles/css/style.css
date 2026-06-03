@@ -362,60 +362,57 @@ section.reveal:nth-of-type(odd){
     text-align: center;
 }
 
-/* Scroll wrapper — just a relative container */
+/* Scroll wrapper — relative container with premium edge fade effect */
 .reviews-scroll-wrapper {
     position: relative;
+    overflow: hidden;
+    width: 100%;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
 }
 
-/* ←  →  Extreme-edge arrow buttons */
-.rev-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-60%);
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
-    border: 2px solid #8d2123;
-    background: #fff;
-    color: #8d2123;
-    font-size: 17px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 14px rgba(141,33,35,0.20);
-    transition: background 0.22s ease, color 0.22s ease,
-                transform 0.2s ease, box-shadow 0.22s ease;
-    z-index: 10;
-}
-
-.rev-prev { left: 14px; }
-.rev-next { right: 14px; }
-
-.rev-arrow:hover {
-    background: #8d2123;
-    color: #fff;
-    transform: translateY(-60%) scale(1.12);
-    box-shadow: 0 8px 24px rgba(141,33,35,0.38);
-}
-
-.rev-arrow:active {
-    transform: translateY(-60%) scale(0.95);
-}
-
-/* Scroll row — padded so cards don't hide behind buttons */
+/* Scroll row */
 #reviews {
     display: flex;
-    gap: 22px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    padding: 8px 60px 28px;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+    width: max-content;
     align-items: stretch;
 }
 
-#reviews::-webkit-scrollbar { display: none; }
+/* Slide container containing one full set of reviews */
+.reviews-slide {
+    display: flex;
+    gap: 22px;
+    padding: 10px 11px 28px; /* 11px left/right padding forms exactly 22px gap when slides meet side-by-side */
+    flex-shrink: 0;
+    animation: marquee-scroll 35s linear infinite;
+}
+
+/* Pause marquee scroll on hover */
+#reviews:hover .reviews-slide {
+    animation-play-state: paused;
+}
+
+/* Keyframes for smooth infinite looping translation */
+@keyframes marquee-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Respect user preferences for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .reviews-slide {
+        animation: none;
+    }
+    #reviews {
+        width: 100%;
+        overflow-x: auto;
+        padding: 10px 20px 28px;
+    }
+}
 
 /* ---- Card ---- */
 .review {
