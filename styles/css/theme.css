@@ -1,4 +1,12 @@
 :root {
+    --accent: #8d2123;
+    --accent-dark: #6f1a1c;
+    --success: #2f855a;
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --shadow-soft: 0 8px 24px rgba(15, 23, 42, 0.08);
+    --shadow-lift: 0 16px 36px rgba(15, 23, 42, 0.14);
+    --container: 1180px;
     --bg-primary: #ffffff;
     --bg-secondary: #f7f7f7;
     --bg-card: #ffffff;
@@ -77,6 +85,8 @@
 }
 
 [data-theme="dark"] {
+    --shadow-soft: 0 10px 28px rgba(0, 0, 0, 0.28);
+    --shadow-lift: 0 18px 40px rgba(0, 0, 0, 0.42);
     --bg-primary: #0f1117;
     --bg-secondary: #161922;
     --bg-card: #1c1f2e;

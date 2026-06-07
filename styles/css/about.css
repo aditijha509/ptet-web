@@ -1,10 +1,12 @@
 /* ===== PREMIUM HERO ===== */
 
 .about-hero{
-    padding:140px 20px 100px;
+    padding:clamp(110px, 12vw, 140px) 20px clamp(70px, 9vw, 100px);
     text-align:center;
 
-    background:linear-gradient(135deg, #f7f7f7, #ffffff);
+    background:
+        linear-gradient(135deg, rgba(141,33,35,0.08), transparent 36%),
+        linear-gradient(180deg, #f7f7f7, #ffffff);
 
     position:relative;
     overflow:hidden;
@@ -21,6 +23,7 @@
     background:rgba(141,33,35,0.08);
     border-radius:50%;
     filter:blur(80px);
+    display:none;
 }
 
 .hero-inner{
@@ -31,11 +34,13 @@
 
 /* badge */
 .hero-badge{
-    display:inline-block;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
     background:#fff;
     border:1px solid #eee;
     padding:6px 14px;
-    border-radius:20px;
+    border-radius:8px;
     font-size:13px;
     color:#8d2123;
     margin-bottom:20px;
@@ -43,7 +48,7 @@
 
 /* heading */
 .about-hero h1{
-    font-size:46px;
+    font-size:clamp(2rem, 5vw, 2.875rem);
     margin-bottom:15px;
     font-weight:700;
 }
@@ -94,6 +99,7 @@
 
 /* CONTAINER */
 .container{
+    width:min(100% - 32px, 1100px);
     max-width:1100px;
     margin:auto;
 }
@@ -104,7 +110,7 @@
 
 /* SECTION */
 .about-section{
-    padding:80px 20px;
+    padding:clamp(56px, 8vw, 90px) 20px;
     text-align:center;
 }
 
@@ -114,7 +120,7 @@
 
 /* GRID */
 .about-grid-section{
-    padding:80px 20px;
+    padding:clamp(56px, 8vw, 90px) 20px;
 }
 
 .about-grid{
@@ -126,10 +132,11 @@
 /* CARD */
 .about-card{
     padding:30px;
-    border-radius:12px;
+    border-radius:8px;
     background:#fff;
     box-shadow:0 8px 25px rgba(0,0,0,0.08);
     transition:0.3s;
+    text-align:left;
 }
 
 .about-card:hover{
@@ -139,7 +146,7 @@
 .about-card i{
     font-size:30px;
     color:#8d2123;
-    margin-bottom:10px;
+    margin-bottom:16px;
 }
 
 /* HEADING */
@@ -153,7 +160,7 @@
 
 .about-cta{
     position:relative;
-    padding:100px 20px;
+    padding:clamp(64px, 9vw, 100px) 20px;
     text-align:center;
     color:#fff;
 
@@ -172,6 +179,7 @@
     background:rgba(255,255,255,0.08);
     border-radius:50%;
     filter:blur(80px);
+    display:none;
 }
 
 /* inner container */
@@ -182,7 +190,7 @@
 
 /* heading */
 .about-cta h2{
-    font-size:32px;
+    font-size:clamp(1.75rem, 4vw, 2rem);
     margin-bottom:15px;
 }
 
@@ -232,10 +240,11 @@
 
     background:#ffffff;
     padding:30px 35px;
-    border-radius:14px;
+    border-radius:8px;
 
     box-shadow:0 12px 35px rgba(0,0,0,0.08);
     transition:0.3s ease;
+    border:1px solid rgba(141,33,35,0.08);
 }
 
 .about-combined:hover{
@@ -260,6 +269,7 @@
     gap:30px;
     flex-wrap:wrap;
     justify-content:center;
+    width:100%;
 }
 
 /* STAT BOX */
@@ -267,6 +277,9 @@
     text-align:center;
     min-width:90px;
     transition:0.3s;
+    padding:14px 12px;
+    border-radius:8px;
+    background:rgba(141,33,35,0.06);
 }
 
 .stat-box h3{
@@ -291,6 +304,7 @@
     .about-combined{
         flex-direction:column;
         text-align:center;
+        padding:24px 18px;
     }
 
     .about-info{
@@ -301,7 +315,7 @@
 /* ===== TEST STRUCTURE SECTION ===== */
 
 .about-structure-section{
-    padding:100px 20px;
+    padding:clamp(56px, 8vw, 100px) 20px;
     background:#f7f7f7;
     text-align:center;
 }
@@ -324,10 +338,11 @@
 .structure-card{
     background:#fff;
     padding:30px 25px;
-    border-radius:12px;
+    border-radius:8px;
 
     box-shadow:0 8px 25px rgba(0,0,0,0.08);
     transition:0.3s ease;
+    text-align:left;
 }
 
 .structure-card:hover{
@@ -353,7 +368,7 @@
 /* ===== TIMELINE SECTION ===== */
 
 .timeline-section{
-    padding:100px 20px;
+    padding:clamp(56px, 8vw, 100px) 20px;
     background:#ffffff;
     text-align:center;
 }
@@ -418,9 +433,10 @@
     width:40%;
     background:#fff;
     padding:20px;
-    border-radius:10px;
+    border-radius:8px;
     box-shadow:0 8px 25px rgba(0,0,0,0.08);
     text-align:left;
+    border:1px solid rgba(141,33,35,0.08);
 }
 
 .timeline-content h3{
@@ -487,11 +503,12 @@
 .audience-card{
     background:#fff;
     padding:30px 25px;
-    border-radius:14px;
+    border-radius:8px;
     text-align:left;
 
     box-shadow:0 10px 30px rgba(0,0,0,0.08);
     transition:0.3s;
+    border:1px solid rgba(141,33,35,0.08);
 }
 
 .audience-card:hover{
@@ -527,4 +544,55 @@
 
 .audience-link:hover{
     text-decoration:underline;
+}
+
+@media(max-width:600px){
+    .timeline::before{
+        left:25px;
+    }
+
+    .timeline-item,
+    .timeline-item:nth-child(even){
+        margin-left:0;
+        padding-left:56px;
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .timeline-icon{
+        position:absolute;
+        left:0;
+        top:0;
+    }
+
+    .timeline-content{
+        width:100%;
+    }
+}
+
+@media(max-width:600px){
+    .container{
+        width:min(100% - 24px, 1100px);
+    }
+
+    .hero-actions,
+    .about-cta .primary-btn,
+    .hero-link,
+    .primary-btn{
+        width:100%;
+    }
+
+    .hero-link,
+    .primary-btn{
+        display:inline-flex;
+        justify-content:center;
+    }
+
+    .about-stats{
+        gap:16px;
+    }
+
+    .stat-box{
+        flex:1 1 120px;
+    }
 }

@@ -6,8 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PTE Preparation | PTE HUB</title>
 
+    <link rel="stylesheet" href="../styles/css/style.css">
     <link rel="stylesheet" href="../styles/css/navbar.css">
     <link rel="stylesheet" href="../styles/css/footer.css">
+    <link rel="stylesheet" href="../styles/css/auth-popup.css">
+    <link rel="stylesheet" href="../styles/css/theme.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap"
@@ -423,6 +426,9 @@
 
 <body>
 
+    <header id="header">
+        <div id="navbar-placeholder"></div>
+    </header>
 
 
     <!-- HERO -->
@@ -729,7 +735,13 @@
         </div>
     </section>
 
+    <div id="footer-placeholder"></div>
+    <div id="auth-popup-placeholder"></div>
 
+    <script src="../scripts/js/theme.js"></script>
+    <script src="../scripts/js/navbar.js"></script>
+    <script src="../scripts/js/footer.js"></script>
+    <script src="../scripts/js/auth-popup.js"></script>
     <script>
         document.querySelectorAll(".faq-question").forEach(btn => {
             btn.addEventListener("click", () => {
